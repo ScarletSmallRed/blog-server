@@ -17,6 +17,7 @@ exports.blog_create = (req, res, next) => {
 }
 
 exports.blog_get_all = (req, res, next) => {
+  console.log("req session:", req.session)
   Blog.find()
     .select("_id title content")
     .then(docs => {
